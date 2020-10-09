@@ -1,4 +1,5 @@
 <?php
+$users = array('admin' => '123456');
 $realm = 'Edit mode. User required';
 
 $editorTxt = '<!--quickcms:start-->
@@ -293,8 +294,7 @@ if(!isset($_GET["file"]) || empty($_GET["file"])) {
 }
 
 
-//user => password
-$users = array('admin' => 'parola123');
+
 
 if (empty($_SERVER['PHP_AUTH_DIGEST'])) {
     header('HTTP/1.1 401 Unauthorized');
