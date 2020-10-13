@@ -1,54 +1,60 @@
 # AaCMS
-AaCMS or "Almost a CMS" is a single file visual website editor which allows instant modifications of static HTML pages of a website.  
+AaCMS or "Almost a CMS" is a single file visual editor which allows instant modifications of static HTML pages of a website.
+
+Use it to perform content updates on your static website. Also, by using the _Save As_ feature you can also create new pages.
+
+##### Screenshot of editor in action
+![Screenshot](screenshot.png)
 
 ##### Features
 - edit text 
-- delete HTML elements with point and click
-- duplicate HTML elements
-- move elements around the page with drag and drop
-- create new files from existing ones using the save-as function 
+- edit links
+- edit images
+- delete elements
+- copy/cut & paste elements within the page
+- save as (allows to create new files)
+- confirm "save as" when file exists already
 
-#### Requirements
-- a running webserver (apache/nginx/lighttpd) with PHP support
+##### Requirements
+- a running web server (apache/nginx/lighttpd) with PHP support
 - website files should be writeable
 - it uses jquery and jquery-ui which are loaded from an external CDN, therefore it is required a running internet connection for the client 
 
-##Installation
-1. Edit `editor.php` and set a user and password.   
-2. Copy/upload `editor.php` in the root folder of your website
+## Links
+* [GitHub](https://github.com/vsergione/AaCMS)
+* [Homepage](https://softaccel.net/aacms/)
+* [Demo](https://softaccel.net/aacms/editor.php?file=index.php) (user: demo, password: 123456)
 
-Note: feel free to rename editor.php to something more random. 
 
-##Usage
-Just point your browser to
+## Installation
+1. download editor.php from GitHub: https://raw.githubusercontent.com/vsergione/AaCMS/main/editor.php
+2. Edit `editor.php` and set a user and password. Multiple users can be added   
+3. Copy/upload `editor.php` in the root folder of your website
+4. Security suggestion: rename file editor.php so it's name cannot be guesses easily
+
+
+## Usage
+Point your browser to
 
     http(s)://yourwebsiteaddress/editor.php?file=file_to_edit.html
+    
+and start editing.
 
-and start editing. 
+You will notice a toolbox-like floating window that you can move around the page. By default it displays a "File menu" which you can use to save the file, save the file under a new name, reload or go to original file.
 
-You will notice a toolbox like floating window that you can move around the page.
- 
-Currently there are 4 tools:
-- edit: edit the text which is contained by the yellow highlighted element
-- delete: delete the red highlighted element
-- move: move around the pink highlighted element
-- clone: create clone of the red highlighted element
+By moving the mouse over the page the hovered elements will be highlighted with a dashed border. Clicking on the hovered element will enter the edit mode.
 
-Use the Save button to overwrite the current file with the changes that you have done
+Depending on the selected element type, you will get 2 standard menus and a selection dependent menu
+- **edit**: use this menu to perform copy/cut & paste operations
+- **traverse**: use the buttons from this menu to navigate through the elements tree. Useful especially for selecting elements which cannot be selected with a click, like: FORM, TABLE, FIELDSET, UL and so on
+- **text**: this menu becomes active when clicking an element which can be edited as text, like DIV, P, TD, LI and so on. Once the element is selected you can start to edit it. Also, it provides some basic styling options: bold, italic, increase/decrease font size, and so on. The styling will be applied only to the text selection and not on the entire selected element.
+- **image**: this menu becomes active when the selected element is an image and displays a form which can be used to modify the basic image properties
+- **link**: this menu becomes active when the selected element is a link and displays a form to edit the link properties
 
-Use "Save as" button to create a new file from the current file.
 
- 
-###<span style="color:red">Warnings</span>
-- there is no undo
-- when using "Save as" if the file name that you provide already exists, it will not prompt for confirmation rather it will overwrite it directly.
- 
-###Roadmap:
-v1.0.1
-- confirmation on overwrite
-- add swap file for continuos saving
-- edit links
-- edit images
+## Support
+Feel free to signal any issues using the GIT Hub Issues: 
+https://github.com/vsergione/AaCMS 
 
 
 
