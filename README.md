@@ -23,7 +23,7 @@ Use it to perform content updates on your static website. Also, by using the _Sa
 ## Links
 * [GitHub](https://github.com/vsergione/AaCMS)
 * [Homepage](https://softaccel.net/aacms/)
-* [Demo](https://softaccel.net/aacms/editor.php?file=index.php) (user: demo, password: 123456)
+* [Demo](https://softaccel.net/aacms/editor.php?file=index.html) (user: demo, password: 123456)
 
 
 ## Installation
