@@ -1,0 +1,77 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <title>Demo page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- <link rel="icon" type="image/x-icon" href="favicon.ico"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        body{
+            background: #dddddd;
+        }
+        .container{
+            margin-top: 20px;
+            padding: 20px;
+            background: white;
+        }
+        h1,h2{
+            border-bottom: solid silver 1px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <h1 id="aacms">AaCMS</h1>
+    <p>AaCMS or &quot;Almost a CMS&quot; is a single file visual editor which allows instant modifications of static HTML pages of a website.</p>
+    <p>Use it to perform content updates on your static website. Also, by using the <em>Save As</em> feature you can also create new pages.</p>
+    <h5 id="screenshot-of-editor-in-action">Screenshot of editor in action</h5>
+    <p><img src="screenshot.png" alt="Screenshot"></p>
+    <h5 id="features">Features</h5>
+    <ul>
+        <li>edit text </li>
+        <li>edit links</li>
+        <li>edit images</li>
+        <li>delete elements</li>
+        <li>copy/cut &amp; paste elements within the page</li>
+        <li>save as (allows to create new files)</li>
+        <li>confirm &quot;save as&quot; when file exists already</li>
+    </ul>
+    <h5 id="requirements">Requirements</h5>
+    <ul>
+        <li>a running web server (apache/nginx/lighttpd) with PHP support</li>
+        <li>website files should be writeable</li>
+        <li>it uses jquery and jquery-ui which are loaded from an external CDN, therefore it is required a running internet connection for the client </li>
+    </ul>
+    <h2 id="links">Links</h2>
+    <ul>
+        <li><a href="https://github.com/vsergione/AaCMS">GitHub</a></li>
+        <li><a href="https://softaccel.net/aacms/">Homepage</a></li>
+        <li><a href="https://softaccel.net/aacms/editor.php?file=index.php">Demo</a> (user: demo, password: 123456)</li>
+    </ul>
+    <h2 id="installation">Installation</h2>
+    <ol>
+        <li>download editor.php from GitHub: <a href="https://raw.githubusercontent.com/vsergione/AaCMS/main/editor.php">https://raw.githubusercontent.com/vsergione/AaCMS/main/editor.php</a></li>
+        <li>Edit <code>editor.php</code> and set a user and password. Multiple users can be added   </li>
+        <li>Copy/upload <code>editor.php</code> in the root folder of your website</li>
+        <li>Security suggestion: rename file editor.php so it&#39;s name cannot be guesses easily</li>
+    </ol>
+    <h2 id="usage">Usage</h2>
+    <p>Point your browser to</p>
+    <pre><code>http(s)<span class="hljs-symbol">://yourwebsiteaddress/editor</span>.php?file=file_to_edit.html
+</code></pre><p>and start editing.</p>
+    <p>You will notice a toolbox-like floating window that you can move around the page. By default it displays a &quot;File menu&quot; which you can use to save the file, save the file under a new name, reload or go to original file.</p>
+    <p>By moving the mouse over the page the hovered elements will be highlighted with a dashed border. Clicking on the hovered element will enter the edit mode.</p>
+    <p>Depending on the selected element type, you will get 2 standard menus and a selection dependent menu</p>
+    <ul>
+        <li><strong>edit</strong>: use this menu to perform copy/cut &amp; paste operations</li>
+        <li><strong>traverse</strong>: use the buttons from this menu to navigate through the elements tree. Useful especially for selecting elements which cannot be selected with a click, like: FORM, TABLE, FIELDSET, UL and so on</li>
+        <li><strong>text</strong>: this menu becomes active when clicking an element which can be edited as text, like DIV, P, TD, LI and so on. Once the element is selected you can start to edit it. Also, it provides some basic styling options: bold, italic, increase/decrease font size, and so on. The styling will be applied only to the text selection and not on the entire selected element.</li>
+        <li><strong>image</strong>: this menu becomes active when the selected element is an image and displays a form which can be used to modify the basic image properties</li>
+        <li><strong>link</strong>: this menu becomes active when the selected element is a link and displays a form to edit the link properties</li>
+    </ul>
+    <h2 id="support">Support</h2>
+    <p>Feel free to signal any issues using the GIT Hub Issues:
+        <a href="https://github.com/vsergione/AaCMS">https://github.com/vsergione/AaCMS</a> </p>
+
+</div>
+</body></html>
