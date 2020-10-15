@@ -21,57 +21,98 @@
 <body>
 <div class="container">
 
-    <h1 id="aacms">AaCMS</h1>
-    <p>AaCMS or &quot;Almost a CMS&quot; is a single file visual editor which allows instant modifications of static HTML pages of a website.</p>
-    <p>Use it to perform content updates on your static website. Also, by using the <em>Save As</em> feature you can also create new pages.</p>
-    <h5 id="screenshot-of-editor-in-action">Screenshot of editor in action</h5>
-    <p><img src="screenshot.png" alt="Screenshot"></p>
-    <h5 id="features">Features</h5>
+    <h1>AaCMS</h1>
+
+    <p><strong>Almost a CMS</strong> aka <strong>AaCMS</strong> is a simple visual editor for live static websites written in PHP and JavaScript. It's easy to install (just copy the editor.php on your web server) and to use (load it in the web browser).</p>
+
+    <p>Use it to update static web pages and also create new pages using the <em>Save As</em> feature</p>
+
+    <p>Being simple means that it's also limited in many aspects, including security stuff. So don't forget to check out the <a href="#warnings">Warnings</a> section to find out more about how you can secure your installation.   </p>
+
+    <h4>Screenshot</h4>
+
+    <p><img src='screenshot.png' alt='Screenshot of editor in action' title='Screenshot of editor in action' style='max-width: 100%; border: solid 1px'></p>
+
+    <h2>Features</h2>
+
     <ul>
-        <li>edit text </li>
-        <li>edit links</li>
-        <li>edit images</li>
-        <li>delete elements</li>
-        <li>copy/cut &amp; paste elements within the page</li>
-        <li>save as (allows to create new files)</li>
-        <li>confirm &quot;save as&quot; when file exists already</li>
+        <li>edit text   </li>
+        <li>edit links  </li>
+        <li>edit images  </li>
+        <li>delete elements  </li>
+        <li>copy/cut &amp; paste elements within the page  </li>
+        <li>save as (allows to create new files)  </li>
+        <li>confirm "save as" when file exists already  </li>
+        <li>uses basic authentication to authenticate users</li>
     </ul>
-    <h5 id="requirements">Requirements</h5>
+
+    <h2>Requirements</h2>
+
     <ul>
-        <li>a running web server (apache/nginx/lighttpd) with PHP support</li>
-        <li>website files should be writeable</li>
-        <li>it uses jquery and jquery-ui which are loaded from an external CDN, therefore it is required a running internet connection for the client </li>
+        <li>a running web server (apache/nginx/lighttpd) with PHP support  </li>
+        <li>website files should be writeable by the web server (see <a href="#warnings">Warnings</a> )  </li>
+        <li>it links to jquery and jquery-ui from an external CDN, therefore it is required a running internet connection for the client   </li>
     </ul>
-    <h2 id="links">Links</h2>
+
+    <h2>Links</h2>
+
     <ul>
-        <li><a href="https://github.com/vsergione/AaCMS">GitHub</a></li>
-        <li><a href="https://softaccel.net/aacms/">Homepage</a></li>
-        <li><a href="https://softaccel.net/aacms/editor.php?file=index.html">Demo</a> (user: demo, password: 123456)</li>
+        <li><a href="https://github.com/vsergione/AaCMS">GitHub</a>  </li>
+        <li><a href="https://softaccel.net/aacms/">Homepage</a>  </li>
+        <li><a href="https://softaccel.net/aacms/editor.php?file=index.html">Demo</a> (user: demo, password: 123456)  </li>
     </ul>
-    <h2 id="installation">Installation</h2>
+
+    <h2>Installation</h2>
+
     <ol>
-        <li>download editor.php from GitHub: <a href="https://raw.githubusercontent.com/vsergione/AaCMS/main/editor.php">https://raw.githubusercontent.com/vsergione/AaCMS/main/editor.php</a></li>
-        <li>Edit <code>editor.php</code> and set a user and password. Multiple users can be added   </li>
-        <li>Copy/upload <code>editor.php</code> in the root folder of your website</li>
-        <li>Security suggestion: rename file editor.php so it&#39;s name cannot be guesses easily</li>
+        <li>download editor.php from GitHub: https://raw.githubusercontent.com/vsergione/AaCMS/main/editor.php  </li>
+        <li>Edit <code>editor.php</code> and set a user and password. Multiple users can be added     </li>
+        <li>Copy/upload <code>editor.php</code> in the root folder of your website  </li>
+        <li>Security suggestion: rename file editor.php so it's name cannot be guesses easily  </li>
     </ol>
-    <h2 id="usage">Usage</h2>
-    <p>Point your browser to</p>
-    <pre><code>http(s)<span class="hljs-symbol">://yourwebsiteaddress/editor</span>.php?file=file_to_edit.html
-</code></pre><p>and start editing.</p>
-    <p>You will notice a toolbox-like floating window that you can move around the page. By default it displays a &quot;File menu&quot; which you can use to save the file, save the file under a new name, reload or go to original file.</p>
-    <p>By moving the mouse over the page the hovered elements will be highlighted with a dashed border. Clicking on the hovered element will enter the edit mode.</p>
-    <p>Depending on the selected element type, you will get 2 standard menus and a selection dependent menu</p>
-    <ul>
-        <li><strong>edit</strong>: use this menu to perform copy/cut &amp; paste operations</li>
-        <li><strong>traverse</strong>: use the buttons from this menu to navigate through the elements tree. Useful especially for selecting elements which cannot be selected with a click, like: FORM, TABLE, FIELDSET, UL and so on</li>
-        <li><strong>text</strong>: this menu becomes active when clicking an element which can be edited as text, like DIV, P, TD, LI and so on. Once the element is selected you can start to edit it. Also, it provides some basic styling options: bold, italic, increase/decrease font size, and so on. The styling will be applied only to the text selection and not on the entire selected element.</li>
-        <li><strong>image</strong>: this menu becomes active when the selected element is an image and displays a form which can be used to modify the basic image properties</li>
-        <li><strong>link</strong>: this menu becomes active when the selected element is a link and displays a form to edit the link properties</li>
-    </ul>
-    <h2 id="support">Support</h2>
-    <p>Feel free to signal any issues using the GIT Hub Issues:
-        <a href="https://github.com/vsergione/AaCMS">https://github.com/vsergione/AaCMS</a> </p>
+
+    <h2>Usage</h2>
+
+    <p>Point your browser to  </p>
+
+    <p>http(s)://yourwebsiteaddress/editor.php?file=file<em>to</em>edit.html  and start editing.  </p>
+
+    <p>You will notice a toolbox-like floating window that you can move around the page. By default it displays a "File menu" which you can use to save the file, save the file under a new name, reload or go to original file.  </p>
+
+    <p>By moving the mouse over the page the hovered elements will be highlighted with a dashed border. Clicking on the hovered element will enter the edit mode.  </p>
+
+    <p>Depending on the selected element type, you will get 2 standard menus and a selection dependent menu <br />
+        - <strong>edit</strong>: use this menu to perform copy/cut &amp; paste operations <br />
+        - <strong>traverse</strong>: use the buttons from this menu to navigate through the elements tree. Useful especially for selecting elements which cannot be selected with a click, like: FORM, TABLE, FIELDSET, UL and so on <br />
+        - <strong>text</strong>: this menu becomes active when clicking an element which can be edited as text, like DIV, P, TD, LI and so on. Once the element is selected you can start to edit it. Also, it provides some basic styling options: bold, italic, increase/decrease font size, and so on. The styling will be applied only to the text selection and not on the entire selected element. <br />
+        - <strong>image</strong>: this menu becomes active when the selected element is an image and displays a form which can be used to modify the basic image properties <br />
+        - <strong>link</strong>: this menu becomes active when the selected element is a link and displays a form to edit the link properties  </p>
+
+    <h2><a id='warnings'></a>Warnings</h2>
+
+    <p>This tool is like a knife: it's simple and straightforward (not much fanciness inside) and you can do useful stuff with it, but you can also cut yourself pretty bad. Therefore there are a few things which you should keep in mind when using it on your website:  </p>
+
+    <h4>Security</h4>
+
+    <p>The security of this script is pretty low by itself. It uses Basic Auth to authenticate users which transmits password in clear. This means that you should <strong>NEVER</strong> use this on a live website without <strong>HTTPS</strong> enabled.    </p>
+
+    <p>The information about the users is hard coded in the script itself, so not a very flexible approach. Of course, you are free to implement your own methods. A quick improvement could be to create a separate PHP file where you store the users info placed outside the website DocRoot and include it in the script.      </p>
+
+    <h4>File permissions</h4>
+
+    <p>This script, being run by the web server, it will access files with the web server user. On a typical Linux systems this is "www-data". Therefore, you should decide in advance which files/directories you want to allow to be edited and set their access rights or ownership accordingly.   </p>
+
+    <p>Do this either in Linux console by using any of the approaches bellow <br />
+        - set access rights: <code>chmod u+w your_file_or_directory_name</code> or <br />
+        - change ownership files to match the web server user:  <code>chown www-data your_file_or_directory_name</code>  </p>
+
+    <p>Or by using your favorite FTP client change either the access rights or the ownership of the files   </p>
+
+    <h2>Support</h2>
+
+    <p>Feel free to make feature requests, suggestions or signal any issues using the project GIT Hub Issues: <br />
+        https://github.com/vsergione/AaCMS</p>
+
 
 </div>
 </body></html>
