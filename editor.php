@@ -1,5 +1,5 @@
 <?php
-$users = array('demo' => '123456');
+$users = ['demo' => '123456'];
 $realm = 'Edit mode. User required';
 
 ob_start();
